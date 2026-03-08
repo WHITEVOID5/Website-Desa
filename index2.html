@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumani Selatan</title>
+    <style>
+        /* Palet Warna Estetik (Earth Tones) & Tipografi */
+        :root {
+            --bg-color: #FAFAF5; /* Putih tulang / Krem sangat muda */
+            --text-main: #4A463F; /* Abu-abu kecoklatan gelap */
+            --accent: #8E735B; /* Coklat tanah/Moka */
+            --heading-font: 'Georgia', 'Times New Roman', serif;
+            --body-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: var(--body-font);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        nav {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+        .logo { font-family: var(--heading-font); font-size: 1.5rem; letter-spacing: 2px; color: var(--text-main); }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        .hero-aesthetic {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .hero-aesthetic::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url(img/utama.png);/* Pengganti foto sementara */
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        .hero-aesthetic h1 { 
+            font-family: var(--heading-font); 
+            font-size: 5vw; 
+            font-weight: normal;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+        .hero-aesthetic p { 
+            font-size: 1.1rem; 
+            max-width: 500px; 
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .section-padding { padding: 120px 10%; }
+        .offset-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 150px;
+        }
+        .offset-grid:nth-child(even) { flex-direction: row-reverse; }
+
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+            height: 500px;
+            background-color: #D6D2C4; /* Placeholder warna estetik */
+            border-radius: 200px 200px 0 0; /* Bentuk lengkung/arch yang populer di desain estetik */
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-style: italic;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+
+        .text-container {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+        }
+        .text-container h2 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        /* Kartu Minimalis untuk Potensi */
+        .potensi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .item-estetik { text-align: center; }
+        .item-estetik .gambar {
+            width: 100%;
+            height: 350px;
+            background-color: #E2DFD8;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
+        .item-estetik:hover .gambar { transform: scale(0.98); }
+        .item-estetik h3 { font-family: var(--heading-font); font-weight: normal; font-size: 1.5rem; margin-bottom: 10px;}
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #E2DFD8;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
+        /* Kelas Animasi yang Sangat Halus */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Timing estetik yang lambat & elegan */
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TUMANI SELATAN</div>
+        <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Kisah</a></li>
+            <li><a href="#">Pesona</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-aesthetic">
+        <h1 class="reveal active">Tumani Selatan</h1>
+        <p class="reveal active delay-1">Merajut cerita, merawat budaya, dan menghidupkan harmoni alam.</p>
+    </header>
+
+    <main class="section-padding">
+        
+        <section class="offset-grid">
+            <div class="image-container reveal">
+                [ Foto Estetik Alam / Suasana Desa ]
+            </div>
+            <div class="text-container reveal delay-1">
+                <h2>Jejak & Waktu</h2>
+                <p>Kisah Tumani Selatan bukan sekadar sejarah di atas kertas, melainkan cerita yang hidup dalam keseharian warganya. [Deskripsi mendalam hasil wawancara dengan tokoh desa akan menempati ruang ini, ditulis dengan gaya bahasa bercerita].</p>
+            </div>
+        </section>
+
+        <section class="offset-grid">
+            <div class="text-container reveal">
+                <h2>Kearifan Lokal</h2>
+                <p>Kehidupan yang berjalan selaras dengan alam melahirkan tradisi yang unik. [Cerita tentang budaya, gotong royong, atau kesenian warga lokal].</p>
+            </div>
+            <div class="image-container reveal delay-1" style="border-radius: 0 0 200px 200px;">
+                [ Foto Estetik Kegiatan Warga / Detail Budaya ]
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 100px;">
+            <h2 class="reveal" style="font-family: var(--heading-font); font-size: 2.5rem; color: var(--accent);">Pesona & Karya</h2>
+        </div>
+        
+        <section class="potensi-grid">
+            <div class="item-estetik reveal">
+                <div class="gambar"></div>
+                <h3>Bumi & Panen</h3>
+                <p>Hasil tani dari tanah yang subur.</p>
+            </div>
+            <div class="item-estetik reveal delay-1">
+                <div class="gambar"></div>
+                <h3>Karya Tangan</h3>
+                <p>Cipta karsa warga Tumani Selatan.</p>
+            </div>
+            <div class="item-estetik reveal delay-2">
+                <div class="gambar"></div>
+                <h3>Ruang Teduh</h3>
+                <p>Sudut alam yang menenangkan jiwa.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Website ini dibuat oleh KKT Angkatan 146 UNSRAT</p>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Mulai animasi saat elemen 100px masuk layar
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        // Jalankan saat di-scroll
+        window.addEventListener("scroll", reveal);
+        // Jalankan sekali saat pertama dibuka
+        reveal();
+    </script>
+</body>
+</html>
